@@ -10,45 +10,36 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		
 		<!-- Title -->
-        <title>MediLink.</span></title>
+        <title>MediLink</title>
 		
 		<!-- Favicon -->
-        <link rel="icon" href="img/favicon.png">
+        <link rel="icon" href="{{asset('../assets/img/favicon.png')}}">
 		
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
 		<!-- Bootstrap CSS -->
-        
 		<link rel="stylesheet" href="{{asset('../assets/css/bootstrap.min.css')}}">
 		<!-- Nice Select CSS -->
-        
 		<link rel="stylesheet" href="{{asset('../assets/css/nice-select.css')}}">
 		<!-- Font Awesome CSS -->
-        
         <link rel="stylesheet" href="{{asset('../assets/css/font-awesome.min.css')}}">
 		<!-- icofont CSS -->
-        
         <link rel="stylesheet" href="{{asset('../assets/css/icofont.css')}}">
 		<!-- Slicknav -->
-        
 		<link rel="stylesheet" href="{{asset('../assets/css/slicknav.min.css')}}">
 		<!-- Owl Carousel CSS -->
-        
         <link rel="stylesheet" href="{{asset('../assets/css/owl-carousel.css')}}">
 		<!-- Datepicker CSS -->
-        
 		<link rel="stylesheet" href="{{asset('../assets/css/datepicker.css')}}">
 		<!-- Animate CSS -->
-        
         <link rel="stylesheet" href="{{asset('../assets/css/animate.min.css')}}">
 		<!-- Magnific Popup CSS -->
-        
         <link rel="stylesheet" href="{{asset('../assets/css/magnific-popup.css')}}">
 		
 		<!-- Medipro CSS -->
         <link rel="stylesheet" href="{{asset('../assets/css/normalize.css')}}">
-        <link rel="stylesheet" href="{{asset('../assets/style.css')}}">
+        <link rel="stylesheet" href="{{asset('../assets/css/style.css')}}">
         <link rel="stylesheet" href="{{asset('../assets/css/responsive.css')}}">
 		
     </head>
@@ -69,7 +60,6 @@
             </div>
         </div>
         <!-- End Preloader -->
-		
 	
 		<!-- Header Area -->
 		<header class="header" >
@@ -80,8 +70,8 @@
 						<div class="col-lg-6 col-md-5 col-12">
 							<!-- Contact -->
 							<ul class="top-link">
-								<li><a href="#">About</a></li>
-								<li><a href="#">Doctors</a></li>
+								<li><a href="#">A Propos</a></li>
+								<li><a href="#">Nos Spécialistes</a></li>
 								<li><a href="#">Contact</a></li>
 								<li><a href="#">FAQ</a></li>
 							</ul>
@@ -90,8 +80,8 @@
 						<div class="col-lg-6 col-md-7 col-12">
 							<!-- Top Contact -->
 							<ul class="top-contact">
-								<li><i class="fa fa-phone"></i>+880 1234 56789</li>
-								<li><i class="fa fa-envelope"></i><a href="mailto:support@yourmail.com">support@yourmail.com</a></li>
+								<li><i class="fa fa-phone"></i>+225 07 06 210 225</li>
+								<li><i class="fa fa-envelope"></i><a href="mailto:support@medilink.com">support@medilink.com</a></li>
 							</ul>
 							<!-- End Top Contact -->
 						</div>
@@ -115,38 +105,41 @@
 								<!-- End Mobile Nav -->
 							</div>
 							<div class="col-lg-7 col-md-9 col-12">
-								<!-- Main Menu -->
+								<!-- Menu Principal -->
 								<div class="main-menu">
 									<nav class="navigation">
 										<ul class="nav menu">
-											<li class="active"><a href="#">Home <i class="icofont-rounded-down"></i></a>
-												<ul class="dropdown">
-													<li><a href="index.html">Home Page 1</a></li>
-												</ul>
-											</li>
-											<li><a href="#">Doctos </a></li>
+											<li class="active"><a href="#">Accueil</a></li> 
+											<li><a href="#">Nos Spécialistes</a></li>
 											<li><a href="#">Services </a></li>
-											<li><a href="#">Pages <i class="icofont-rounded-down"></i></a>
-												<ul class="dropdown">
-													<li><a href="404.html">404 Error</a></li>
-												</ul>
-											</li>
-											<li><a href="#">Blogs <i class="icofont-rounded-down"></i></a>
-												<ul class="dropdown">
-													<li><a href="blog-single.html">Blog Details</a></li>
-												</ul>
-											</li>
+											<li><a href="blog-single.html">Blogs</a></li>
 											<li><a href="contact.html">Contact Us</a></li>
 										</ul>
 									</nav>
 								</div>
 								<!--/ End Main Menu -->
 							</div>
+
+                            @if (Route::has('login'))
+
+                            @auth
+                                <x-app-layout>
+
+                                </x-app-layout>
+
+                            @else
 							<div class="col-lg-2 col-12">
 								<div class="get-quote">
-									<a href="appointment.html" class="btn">Book Appointment</a>
+									<a href="{{route('login')}}" class="btn">Connexion</a>
+								</div>
+                                <div class="get-quote">
+									<a href="{{route('register')}}" class="btn">Inscription</a>
 								</div>
 							</div>
+
+                            @endauth
+
+                            @endif
 						</div>
 					</div>
 				</div>
@@ -728,7 +721,7 @@
 						<!-- Single Blog -->
 						<div class="single-news">
 							<div class="news-head">
-								<img src="{{asset('../assets/img/blog3.jpg')}}" alt="#">
+								<img src="{{asset('../assets/img/blog2.jpg')}}" alt="#">
 							</div>
 							<div class="news-body">
 								<div class="news-content">
@@ -884,7 +877,7 @@
 					</div>
 					<div class="col-lg-6 col-md-12 ">
 						<div class="appointment-image">
-							<img src="img/contact-img.png" alt="#">
+							<img src="{{asset('../assets/img/contact-img.png')}}" alt="#">
 						</div>
 					</div>
 				</div>
@@ -1043,7 +1036,7 @@
 		<!-- Magnific Popup JS -->
 		<script src="{{asset('../assets/js/jquery.magnific-popup.min.js')}}"></script>
 		<!-- Counter Up CDN JS -->
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 		<!-- Bootstrap JS -->
 		<script src="{{asset('../assets/js/bootstrap.min.js')}}"></script>
 		<!-- Main JS -->
